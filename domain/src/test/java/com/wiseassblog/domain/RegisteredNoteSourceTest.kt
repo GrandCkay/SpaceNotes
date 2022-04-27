@@ -244,12 +244,14 @@ class RegisteredNoteSourceTest {
 
         coVerify { noteRepository.deleteNote(testNote) }
 
-        if (result is Result.Value) {
-            //assert the value as being "true"
-            assertTrue { true }
-        } else {
-            assertTrue { false }
-        }
+        assertTrue { result is Result.Value }
+        
+//         if (result is Result.Value) {
+//             //assert the value as being "true"
+//             assertTrue { true }
+//         } else {
+//             assertTrue { false }
+//         }
     }
 
     /**
@@ -280,12 +282,14 @@ class RegisteredNoteSourceTest {
         coVerify { noteRepository.deleteNote(testNote) }
         coVerify { transactionRepository.updateTransactions(testTransaction) }
 
-        if (result is Result.Value) {
-            //assert the value as being "false"
-            assertTrue { true }
-        } else {
-            assertTrue { false }
-        }
+        assertTrue { result is Result.Value }
+        
+//         if (result is Result.Value) {
+//             //assert the value as being "false"
+//             assertTrue { true }
+//         } else {
+//             assertTrue { false }
+//         }
     }
 
     /**
@@ -344,13 +348,15 @@ class RegisteredNoteSourceTest {
         val result = source.updateNote(testNote, locator)
 
         coVerify { noteRepository.updateNote(testNote) }
+        
+        assertTrue { result is Result.Value }
 
-        if (result is Result.Value) {
-            //assert the value as being "true"
-            assertTrue { true }
-        } else {
-            assertTrue { false }
-        }
+//         if (result is Result.Value) {
+//             //assert the value as being "true"
+//             assertTrue { true }
+//         } else {
+//             assertTrue { false }
+//         }
     }
 
     /**
@@ -380,12 +386,15 @@ class RegisteredNoteSourceTest {
         coVerify { noteRepository.updateNote(testNote) }
         coVerify { transactionRepository.updateTransactions(testTransaction) }
 
-        if (result is Result.Value) {
-            //assert the value as being "false"
-            assertTrue { true }
-        } else {
-            assertTrue { false }
-        }
+        
+        assertTrue { result is Result.Value }
+        
+//         if (result is Result.Value) {
+//             //assert the value as being "false"
+//             assertTrue { true }
+//         } else {
+//             assertTrue { false }
+//         }
     }
 
     /**
